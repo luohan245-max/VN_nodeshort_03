@@ -127,6 +127,16 @@
       .sticky-cta .container{grid-template-columns:1fr 1fr !important}
       footer .container{grid-template-columns:1fr 1fr !important}
     }
+  @media (max-width: 390px){
+      .nav{padding:10px 12px}
+      .brand img{height:52px}
+      .actions{gap:8px;flex-wrap:wrap}
+      .actions .btn{padding:10px 12px;font-size:14px}
+    }
+    @media (max-width: 340px){
+      .actions{display:grid;grid-template-columns:1fr;width:100%}
+      .actions .btn{width:100%;justify-content:center}
+    }
   </style>
 </head>
 <body>
@@ -138,7 +148,7 @@
     <div class="container nav">
       <div class="brand"><img src="https://www.nodeshort.com/h5/assets/nodeshort-logo.png" alt="NodeShort logo"></div>
       <div class="actions">
-        <button id="btnCSTop" class="btn tg cta-join" type="button"><span class="icon icon-tg">✈️</span><span>Nhận thưởng qua TG</span></button>
+        <button id="btnCSTop" class="btn tg cta-join" type="button"><span class="icon icon-tg">✈️</span><span>Nhận thưởng qua Tele</span></button>
         <button id="btnFBTop" class="btn fb cta-join" type="button"><span class="icon icon-fb">📘</span><span>Nhận thưởng qua FB</span></button>
       </div>
     </div>
@@ -151,7 +161,7 @@
         <p class="lead">Xác minh nhanh qua CSKH → thưởng xử lý trong vài phút ✅<br>Free tham gia · Không giới hạn · 100% nhận được thưởng</p>
 
         <div class="cta-row" style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
-          <button id="btnCSHero" class="btn tg cta-join"><span class="icon icon-tg">✈️</span><span>Nhận thưởng qua TG</span></button>
+          <button id="btnCSHero" class="btn tg cta-join"><span class="icon icon-tg">✈️</span><span>Nhận thưởng qua Tele</span></button>
           <button id="btnFBHero" class="btn fb cta-join"><span class="icon icon-fb">📘</span><span>Nhận thưởng qua FB</span></button>
         </div>
 
@@ -192,7 +202,7 @@
         </div>
 
         <div class="cta-row" style="margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <button id="btnCSFlowMain" class="btn tg cta-join"><span class="icon icon-tg">✈️</span><span>Nhận thưởng qua TG</span></button>
+          <button id="btnCSFlowMain" class="btn tg cta-join"><span class="icon icon-tg">✈️</span><span>Nhận thưởng qua Tele</span></button>
           <button id="btnFBFlowMain" class="btn fb cta-join"><span class="icon icon-fb">📘</span><span>Nhận thưởng qua FB</span></button>
         </div>
 
@@ -252,14 +262,14 @@
 
     <div class="sticky-cta" id="stickyCTA">
       <div class="container" style="padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
-        <button id="btnCSSticky" class="btn tg cta-join"><span class="icon icon-tg">✈️</span><span>Nhận thưởng qua TG</span></button>
+        <button id="btnCSSticky" class="btn tg cta-join"><span class="icon icon-tg">✈️</span><span>Nhận thưởng qua Tele</span></button>
         <button id="btnFBSticky" class="btn fb cta-join"><span class="icon icon-fb">📘</span><span>Nhận thưởng qua FB</span></button>
       </div>
     </div>
 
     <footer style="margin:40px auto 120px;text-align:center;color:#777">
       <div class="container" style="max-width:1120px;margin:0 auto 18px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
-        <button id="btnCSFooter" class="btn tg cta-join"><span class="icon icon-tg">✈️</span><span>Nhận thưởng qua TG</span></button>
+        <button id="btnCSFooter" class="btn tg cta-join"><span class="icon icon-tg">✈️</span><span>Nhận thưởng qua Tele</span></button>
         <button id="btnFBFooter" class="btn fb cta-join"><span class="icon icon-fb">📘</span><span>Nhận thưởng qua FB</span></button>
       </div>
       <img src="https://www.nodeshort.com/h5/assets/nodeshort-logo.png" style="height:80px;opacity:.75;margin:auto">
