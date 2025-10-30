@@ -123,14 +123,22 @@
       .sticky-cta .container{grid-template-columns:1fr 1fr !important}
       footer .container{grid-template-columns:1fr 1fr !important}
     }
-  @media (max-width: 390px){
-      .nav{padding:10px 12px}
+  @media (max-width: 480px){
+      /* Stack header into two rows and make buttons full-width */
+      .nav{display:grid;grid-template-columns:1fr;row-gap:8px;align-items:center;padding:10px 12px}
+      .brand{justify-self:center}
+      .brand img{height:52px}
+      .actions{display:grid;grid-template-columns:1fr;gap:8px;width:100%}
+      .actions .btn{width:100%;justify-content:center;padding:10px 12px;font-size:14px}
+    }
       .brand img{height:52px}
       .actions{gap:8px;flex-wrap:wrap}
       .actions .btn{padding:10px 12px;font-size:14px}
     }
-    @media (max-width: 340px){
-      .actions{display:grid;grid-template-columns:1fr;width:100%}
+    @media (max-width: 360px){
+      /* Ultra-small devices: slightly smaller text to avoid clipping */
+      .actions .btn{font-size:13px}
+    }
       .actions .btn{width:100%;justify-content:center}
     }
   </style>
@@ -144,8 +152,8 @@
     <div class="container nav">
       <div class="brand"><img src="./assets/nodeshort-logo-new.png" alt="NodeShort logo"></div>
       <div class="actions">
-        <button id="btnCSTop" class="btn tg cta-join" type="button"><span class="icon icon-tg"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-tele-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-tele-light.svg"><img src="./assets/icon-tele-light.png" width="18" height="18" alt="Tele"></picture></span><span>Nhận thưởng qua Tele</span></button>
-        <button id="btnFBTop" class="btn fb cta-join" type="button"><span class="icon icon-fb"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-fb-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-fb-light.svg"><img src="./assets/icon-fb-light.png" width="18" height="18" alt="Facebook"></picture></span><span>Nhận thưởng qua FB</span></button>
+        <button id="btnCSTop" data-pos="top" class="btn tg cta-join" type="button"><span class="icon icon-tg"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-tele-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-tele-light.svg"><img src="./assets/icon-tele-light.png" width="18" height="18" alt="Tele"></picture></span><span>Nhận thưởng qua Tele</span></button>
+        <button id="btnFBTop" data-pos="top" class="btn fb cta-join" type="button"><span class="icon icon-fb"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-fb-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-fb-light.svg"><img src="./assets/icon-fb-light.png" width="18" height="18" alt="Facebook"></picture></span><span>Nhận thưởng qua FB</span></button>
       </div>
     </div>
   </header>
@@ -157,8 +165,8 @@
         <p class="lead">Xác minh qua CSKH – Nhận thưởng trong vài phút ✅<br>Tham gia Free · Không giới hạn · 100% nhận thưởng</p>
 
         <div class="cta-row" style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
-          <button id="btnCSHero" class="btn tg cta-join"><span class="icon icon-tg"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-tele-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-tele-light.svg"><img src="./assets/icon-tele-light.png" width="18" height="18" alt="Tele"></picture></span><span>Nhận thưởng qua Tele</span></button>
-          <button id="btnFBHero" class="btn fb cta-join"><span class="icon icon-fb"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-fb-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-fb-light.svg"><img src="./assets/icon-fb-light.png" width="18" height="18" alt="Facebook"></picture></span><span>Nhận thưởng qua FB</span></button>
+          <button id="btnCSHero" data-pos="hero" class="btn tg cta-join"><span class="icon icon-tg"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-tele-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-tele-light.svg"><img src="./assets/icon-tele-light.png" width="18" height="18" alt="Tele"></picture></span><span>Nhận thưởng qua Tele</span></button>
+          <button id="btnFBHero" data-pos="hero" class="btn fb cta-join"><span class="icon icon-fb"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-fb-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-fb-light.svg"><img src="./assets/icon-fb-light.png" width="18" height="18" alt="Facebook"></picture></span><span>Nhận thưởng qua FB</span></button>
         </div>
 
         <div class="proof" style="margin-top:12px;color:#e9ebf0;font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;gap:6px;justify-content:center;align-items:center">✅ Hỗ trợ 1:1 ✅ Phát thưởng nhanh ✅ Chống gian lận</div>
@@ -198,8 +206,8 @@
         </div>
 
         <div class="cta-row" style="margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <button id="btnCSFlowMain" class="btn tg cta-join"><span class="icon icon-tg"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-tele-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-tele-light.svg"><img src="./assets/icon-tele-light.png" width="18" height="18" alt="Tele"></picture></span><span>Nhận thưởng qua Tele</span></button>
-          <button id="btnFBFlowMain" class="btn fb cta-join"><span class="icon icon-fb"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-fb-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-fb-light.svg"><img src="./assets/icon-fb-light.png" width="18" height="18" alt="Facebook"></picture></span><span>Nhận thưởng qua FB</span></button>
+          <button id="btnCSFlowMain" data-pos="flow" class="btn tg cta-join"><span class="icon icon-tg"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-tele-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-tele-light.svg"><img src="./assets/icon-tele-light.png" width="18" height="18" alt="Tele"></picture></span><span>Nhận thưởng qua Tele</span></button>
+          <button id="btnFBFlowMain" data-pos="flow" class="btn fb cta-join"><span class="icon icon-fb"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-fb-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-fb-light.svg"><img src="./assets/icon-fb-light.png" width="18" height="18" alt="Facebook"></picture></span><span>Nhận thưởng qua FB</span></button>
         </div>
 
         <div style="margin-top:14px;font-weight:600;color:#e9ebf0;display:flex;gap:6px;justify-content:center;align-items:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px">✅ Xử lý nhanh ✅ Không giới hạn ✅ Chống gian lận</div>
@@ -258,15 +266,15 @@
 
     <div class="sticky-cta" id="stickyCTA">
       <div class="container" style="padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
-        <button id="btnCSSticky" class="btn tg cta-join"><span class="icon icon-tg"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-tele-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-tele-light.svg"><img src="./assets/icon-tele-light.png" width="18" height="18" alt="Tele"></picture></span><span>Nhận thưởng qua Tele</span></button>
-        <button id="btnFBSticky" class="btn fb cta-join"><span class="icon icon-fb"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-fb-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-fb-light.svg"><img src="./assets/icon-fb-light.png" width="18" height="18" alt="Facebook"></picture></span><span>Nhận thưởng qua FB</span></button>
+        <button id="btnCSSticky" data-pos="sticky" class="btn tg cta-join"><span class="icon icon-tg"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-tele-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-tele-light.svg"><img src="./assets/icon-tele-light.png" width="18" height="18" alt="Tele"></picture></span><span>Nhận thưởng qua Tele</span></button>
+        <button id="btnFBSticky" data-pos="sticky" class="btn fb cta-join"><span class="icon icon-fb"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-fb-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-fb-light.svg"><img src="./assets/icon-fb-light.png" width="18" height="18" alt="Facebook"></picture></span><span>Nhận thưởng qua FB</span></button>
       </div>
     </div>
 
     <footer style="margin:40px auto 120px;text-align:center;color:#777">
       <div class="container" style="max-width:1120px;margin:0 auto 18px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
-        <button id="btnCSFooter" class="btn tg cta-join"><span class="icon icon-tg"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-tele-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-tele-light.svg"><img src="./assets/icon-tele-light.png" width="18" height="18" alt="Tele"></picture></span><span>Nhận thưởng qua Tele</span></button>
-        <button id="btnFBFooter" class="btn fb cta-join"><span class="icon icon-fb"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-fb-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-fb-light.svg"><img src="./assets/icon-fb-light.png" width="18" height="18" alt="Facebook"></picture></span><span>Nhận thưởng qua FB</span></button>
+        <button id="btnCSFooter" data-pos="footer" class="btn tg cta-join"><span class="icon icon-tg"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-tele-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-tele-light.svg"><img src="./assets/icon-tele-light.png" width="18" height="18" alt="Tele"></picture></span><span>Nhận thưởng qua Tele</span></button>
+        <button id="btnFBFooter" data-pos="footer" class="btn fb cta-join"><span class="icon icon-fb"><picture style="display:inline-block;width:18px;height:18px"><source media="(prefers-color-scheme: dark)" srcset="./assets/icon-fb-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/icon-fb-light.svg"><img src="./assets/icon-fb-light.png" width="18" height="18" alt="Facebook"></picture></span><span>Nhận thưởng qua FB</span></button>
       </div>
       <img src="./assets/nodeshort-logo-new.png" style="height:80px;opacity:.75;margin:auto">
       <div style="margin-top:10px">© 2025 Node Short Studios Pte. Ltd — All rights reserved</div>
@@ -360,13 +368,23 @@
     </script>
 
     <script>
-      function goCS(){
-        try{ if(typeof fbq==='function') fbq('track','Contact'); }catch(_e){}
-        window.location.href = 'https://t.me/Nodeshort_VN';
+      function trackCTA(channel, position){
+        try{
+          if(typeof fbq==='function'){
+            fbq('track','Contact',{content_name: channel, content_category:'CTA', position});
+            fbq('trackCustom','CTA_Click',{channel, position, path: location.pathname + location.search});
+          }
+        }catch(_e){}
       }
-      function goFB(){
-        try{ if(typeof fbq==='function') fbq('track','Contact'); }catch(_e){}
-        window.location.href = 'https://m.me/ch/AbakZCpQ8EaVsOg2/';
+      function goCS(e){
+        const pos = e?.currentTarget?.dataset?.pos || 'unknown';
+        trackCTA('tele', pos);
+        setTimeout(()=>{ window.location.href = 'https://t.me/Nodeshort_VN'; }, 120);
+      }
+      function goFB(e){
+        const pos = e?.currentTarget?.dataset?.pos || 'unknown';
+        trackCTA('fb', pos);
+        setTimeout(()=>{ window.location.href = 'https://m.me/ch/AbakZCpQ8EaVsOg2/'; }, 120);
       }
 
       ['btnCSTop','btnCSHero','btnCSFlowMain','btnCSSticky','btnCSFooter'].forEach(id=>{
